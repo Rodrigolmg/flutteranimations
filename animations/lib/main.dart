@@ -1,4 +1,4 @@
-import 'package:animations/components/logoapp.dart';
+import 'package:animations/widgets/logoapp.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
