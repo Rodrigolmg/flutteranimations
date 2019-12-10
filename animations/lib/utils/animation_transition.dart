@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 class AnimationTransition extends StatelessWidget {
 
   final Animation<double> animation;
+
   final Widget child;
+
+  final bool isOpacity;
+
   final double sizeTweenBegin;
   final double sizeTweenEnd;
   final double opacityTweenBegin;
@@ -15,7 +19,8 @@ class AnimationTransition extends StatelessWidget {
     this.sizeTweenBegin,
     this.sizeTweenEnd,
     this.opacityTweenBegin,
-    this.opacityTweenEnd
+    this.opacityTweenEnd,
+    this.isOpacity = false,
   });
 
 
@@ -37,25 +42,33 @@ class AnimationTransition extends StatelessWidget {
     return opacity;
   }
 
+  Widget _getAnimatedWidget(Widget child){
+
+    if(isOpacity)
+      return Opacity(
+        opacity: _getOpacity(),
+        child: Container(
+          child: child,
+        ),
+      );
+
+    return Container(
+      width: _getSize(),
+      height: _getSize(),
+      child: child,
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
 
-    return Center(
-      child: AnimatedBuilder(
-        animation: animation,
-        builder: (context, child){
-          return Opacity(
-            opacity: _getOpacity(),
-            child: Container(
-              width: _getSize(),
-              height: _getSize(),
-              child: child,
-            ),
-          );
-        },
-        child: child,
-      ),
+    return AnimatedBuilder(
+      animation: animation,
+      builder: (context, child){
+        return _getAnimatedWidget(child);
+      },
+      child: child,
     );
   }
 }

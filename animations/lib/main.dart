@@ -1,3 +1,4 @@
+import 'package:animations/pages/login.dart';
 import 'package:animations/widgets/logoapp.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Animation Demo',
-      home: LoggoApp(),
+      home: Login(),
     );
   }
 }

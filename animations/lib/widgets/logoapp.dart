@@ -1,4 +1,4 @@
-import 'package:animations/utils/grow_transition.dart';
+import 'package:animations/utils/animation_transition.dart';
 import 'package:flutter/material.dart';
 
 import 'logo_widget.dart';
