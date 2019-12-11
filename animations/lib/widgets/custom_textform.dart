@@ -6,12 +6,12 @@ class CustomTextFormField extends StatelessWidget {
   final String hint;
   final bool obscure;
 
+
   CustomTextFormField({
     this.icon,
     this.hint,
     this.obscure = false
   });
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,26 +30,24 @@ class CustomTextFormField extends StatelessWidget {
           color: Colors.white
         ),
         decoration: InputDecoration(
-          icon: Icon(
+          prefixIcon: Icon(
             icon,
             color: Colors.white,
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(1.0)
-            ),
+          focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.white24
+              color: Colors.white
             )
           ),
           border: InputBorder.none,
-          hintText: hint,
-          hintStyle: TextStyle(
+          labelText: hint,
+          labelStyle: TextStyle(
             color: Colors.white,
             fontSize: 15,
           ),
-          contentPadding: EdgeInsets.only(top: 30, right: 30, left: 5, bottom: 30)
+          contentPadding: EdgeInsets.only(top: 15, right: 15, left: 5, bottom: 15)
         ),
+        cursorColor: Colors.white,
       ),
     );
   }

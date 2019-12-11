@@ -1,5 +1,6 @@
 import 'package:animations/utils/animation_transition.dart';
-import 'package:animations/widgets/formcontainer.dart';
+import 'package:animations/widgets/form_container.dart';
+import 'package:animations/widgets/sign_up_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -10,6 +11,25 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> with SingleTickerProviderStateMixin{
 
+  AnimationController _animationController;
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2)
+    );
+  }
+
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +46,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin{
           padding: EdgeInsets.zero,
           children: <Widget>[
             Stack(
-              alignment: Alignment.center,
+              alignment: Alignment.bottomCenter,
               children: <Widget>[
                 Column(
                   children: <Widget>[
@@ -40,7 +60,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin{
                         ),
                       ),
                     ),
-                    FormContainer()
+                    FormContainer(),
+                    SignUpButton()
                   ],
                 )
               ],

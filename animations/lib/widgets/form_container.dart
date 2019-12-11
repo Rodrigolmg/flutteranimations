@@ -12,12 +12,15 @@ class FormContainer extends StatelessWidget {
           children: <Widget>[
             CustomTextFormField(
               icon: Icons.person_outline,
-              hint: Label.username,
+              hint: Label.usuario,
             ),
-            CustomTextFormField(
-              icon: Icons.lock_outline,
-              obscure: true,
-              hint: Label.password,
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0),
+              child: CustomTextFormField(
+                icon: Icons.lock_outline,
+                obscure: true,
+                hint: Label.senha,
+              ),
             ),
           ],
         )
