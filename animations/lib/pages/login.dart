@@ -1,8 +1,10 @@
 import 'package:animations/utils/animation_transition.dart';
 import 'package:animations/widgets/form_container.dart';
 import 'package:animations/widgets/sign_up_button.dart';
+import 'package:animations/widgets/animated/stagger_animation_login_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:progress_hud/progress_hud.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -63,7 +65,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin{
                     FormContainer(),
                     SignUpButton()
                   ],
-                )
+                ),
+                StaggerAnimationLoginButton(animationController: _animationController),
               ],
             )
           ],

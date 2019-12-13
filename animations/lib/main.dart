@@ -1,8 +1,17 @@
 import 'package:animations/pages/login.dart';
-import 'package:animations/widgets/logoapp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() {
+
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+
+    runApp(MyApp());
+  }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
